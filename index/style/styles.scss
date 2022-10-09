@@ -1,0 +1,885 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Noto+Serif&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+.body {
+  background-image: url("https://a-static.besthdwallpaper.com/mavi-gokyuzu-arka-planlari-duvar-kagidi-6000x2000-54610_109.jpg");
+  background-size: no-repeat;
+  -webkit-animation: slidein 80s;
+  animation: slidein 80s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  list-style: none;
+  box-sizing: border-box;
+}
+:root {
+  --gradient-moon: linear-gradient(20deg, #000046, #1f1c2c, #928dab);
+  --gradient-sun: linear-gradient(20deg, red, yellow);
+  --color-black: #050c12;
+  --color-white: #fefef4;
+  --color-dark: #2b2e3a;
+  --color-darlight: linear-gradient(45deg, #403b4a, #e7e9bb);
+  --color-toprak1: #c04000;
+  --color-toprak2: #b3984e;
+  --color-toprak3: #a76f07;
+  --color-toprak4: #af7a6d;
+  --color-toprak5: #653239;
+}
+body {
+  display: flexbox;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+}
+                                /* ======dark.mode======= */
+body.dark {
+  background-image: url("https://a-static.besthdwallpaper.com/gece-parlayan-yildizlar-arka-plan-duvar-kagidi-6000x2000-54591_109.jpg");
+  background-size: no-repeat;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+@-webkit-keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+
+@keyframes slidein {
+  from {
+    background-position: top;
+    background-size: 3000px;
+  }
+  to {
+    background-position: -100px 0px;
+    background-size: 2750px;
+  }
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.5px;
+  left: 1px;
+  height: 18px;
+  width: 18px;
+  transform: translateX(0px);
+  display: flex;
+  transition: transform 0.2s linear;
+}
+.checkbox:checked + .label .ball {
+  transform: translateX(19px);
+}
+#gunes {
+  width: 40%;
+}
+#ay {
+  width: 40%;
+}
+                                 /* =======header====== */
+header {
+  left: 0;
+  top: 0;
+  padding: 3% 10%;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+header .logo {
+  color: var(--color-white);
+  font-weight: 70%;
+  font-family: "Rubik Dirt", cursive;
+  text-decoration: none;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+a {
+  text-decoration: none;
+}
+#popup {
+  background-color: #a94b00;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 110%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 300ms all;
+  -webkit-transition: 300ms all;
+  -moz-transition: 300ms all;
+  -ms-transition: 300ms all;
+  -o-transition: 300ms all;
+}
+#popup:target {
+  opacity: 0.9;
+  visibility: visible;
+}
+.popup {
+  display: flex;
+  width: 82%;
+  height: 80%;
+  overflow: hidden;
+  transform: scale(0.6);
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -o-transform: scale(0.6);
+
+  transition: 300ms all;
+  -webkit-transition: 300ms all;
+  -moz-transition: 300ms all;
+  -ms-transition: 300ms all;
+  -o-transition: 300ms all;
+
+  position: relative;
+}
+#popup:target .popup {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.popup-close {
+  position: relative;
+  /* right: 0%; */
+  top: 25%;
+  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+}
+.popup-close img {
+  top: -4rem;
+  color: black;
+  font-size: 24px;
+  cursor: pointer;
+}
+.popup {
+  max-width: 1400px;
+  margin: 40px 0 auto 0 auto;
+}
+.call-out {
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  width: 25%;
+  flex-basis: 25%;
+}
+p{
+  color: white;
+}
+
+@media (min-width: 100px) {
+  .call-outs-container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+                                           /*===== BAŞLIK===== */
+#text {
+  text-align: center;
+  color: var(--color-toprak1);
+  font-family: 'Noto Serif', serif;
+  font-size: 4vw;
+  transform: translateY(-50%);
+}
+#text span {
+  font-size: 0.7em;
+  letter-spacing: 4px;
+  font-weight: 400;
+  color: var(--color-toprak3);
+}
+                                          /* ===başlık-media==== */
+@media only screen and (max-width: 767px){
+  #text {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    color: var(--color-toprak1);
+    font-family: 'Noto Serif', serif;
+    font-size: 6vw;
+    transform: translateY(-50%);
+  }
+  #text span {
+    font-size: 0.7em;
+    letter-spacing: 4px;
+    font-weight: 400;
+    color: var(--color-toprak3);
+  } 
+}
+                                    /* ======Controll - Menü button======*/
+.controll {
+  max-width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+.controll ul li:hover a img {
+  background-color: #30e849;
+}
+.active1 {
+  background-color: #30e849;
+}
+ul img {
+  margin: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: black;
+  width: 55px;
+  height: 55px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 3);
+}
+
+                                    /* =====dark mode====== */
+.label {
+  background-color: #111;
+  cursor: pointer;
+  top: 40px;
+  right: 30px;
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+                                      /* =====fotolar====== */
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding: 10%;
+}
+section img {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+}
+#ates {
+  /* position:absolute; */
+  width: 9%;
+  height: auto;
+  bottom: 38%;
+  left: 62.6%;
+}
+                                         /* ====MEDİA-telefon-anasayfa===== */
+@media only screen and (max-width: 767px) {
+  section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 10%;
+  }
+  section img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  #text {
+    text-align: center;
+  }
+  #moon {
+    max-width: 5%;
+    height: auto;
+    top: 11%;
+    left: 83%;
+    position: absolute;
+  }
+  #sun {
+    max-width: 8%;
+    height: auto;
+    top: 7.8%;
+    left: 81.5%;
+    position: absolute;
+  }
+  #data {
+    width: 100%;
+    height: auto;
+  }
+  #ates {
+    width: 8%;
+    height: auto;
+    bottom: 11.2%;
+    left: 62.6%;
+  }
+}
+
+                                            /* ======GALERİ======= */
+.bodyy {
+  background-image: url(https://c.pxhere.com/photos/7f/33/wood_ivy_green_leaves_climber_wood_fence_paling_goal-492810.jpg!d) !important;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  margin: 0;
+
+                                     /* card */
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+  padding: 6rem 11.5rem;
+}
+.active2 {
+  background-color: #30e849;
+}
+                                 /* ayvaz campıng ailesi */
+h1 {
+  font-size: 2.6rem;
+  position: fixed;
+  left: -4%;
+  top: 50%;
+  margin: 0;
+  transform: rotate(-90deg) translateY(-50%);
+  font-family: "Poppins", sans-serif;
+  /* letter-spacing: 5px; */
+}
+h1 span {
+  transform: translate(-50%, -50%);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: #fcfff5;
+  text-shadow: 7px 7px #91aa9d, 18px 18px #193441;
+}
+                               /* ===başlık-media-galeri==== */
+@media only screen and (max-width: 767px) {
+  h1 {
+    top:20%;
+    font-size: 1.4rem;
+    position: fixed;
+    left: -8%;
+    margin: 0;
+    transform: rotate(-90deg) translateY(-50%);
+    font-family: "Poppins", sans-serif;
+  }
+  
+}
+                                       /* ===SLİDER==== */
+.c {
+  min-width: 700px;
+  width: 52rem;
+  height: 30rem;
+  border-radius: 30px;
+  padding: 20px;
+  padding-bottom: 40px;
+  box-shadow: 0 8px 48px 2px hsla(10 6% 15% / 0.4);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+  background: hsl(0 0% 90%);
+
+  box-sizing: border-box;
+  -webkit-box-shadow: 15px 14px 15px -1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 15px 14px 15px -1px rgba(0, 0, 0, 1);
+  box-shadow: 15px 14px 15px -1px rgba(0, 0, 0, 1);
+}
+
+.ci {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: inherit;
+  height: inherit;
+  transform-origin: left 50%;
+
+  background: inherit;
+
+  z-index: var(--z);
+  transition: 0.3s ease-out;
+}
+
+.ci img {
+  -moz-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+.ch {
+  position: absolute;
+  top: 70%;
+  left: 4%;
+  transform: translateY(-50%);
+
+  font-size: 2rem;
+  color: hsla(var(--h) var(--s) var(--l) / 0.8);
+  text-shadow: 0 2px 10px hsla(var(--h) var(--s) 10% / 0.3);
+}
+
+input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: -10;
+}
+
+label {
+  width: 10%;
+  height: 10px;
+  margin-right: 4px;
+  border-radius: 20px;
+
+  background: hsla(0 0% 90% / 0.3);
+  cursor: pointer;
+
+  position: relative;
+  z-index: 10;
+}
+
+label:last-child {
+  margin-right: 0;
+}
+
+input:checked + label {
+  background: linear-gradient(
+    to right,
+    hsla(var(--hue) 80% 70% / 0.7),
+    hsla(calc(var(--hue) + 30) 80% 50% / 0.7)
+  );
+}
+
+input:not(:checked) + label + .ci {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+input:checked + label + .ci ~ .ci {
+  transform: translateX(100%);
+}
+
+input:not(:checked) + label + .ci {
+   transition: 0;
+}
+                                     /* ===media-galeri=== */
+@media screen and (max-width: 767px){
+  .c {
+    left:6%;
+    width: 47rem;
+    height: 30rem;
+    border-radius: 30px;
+    /* padding: 25rem;  */
+    padding-bottom: 25px;
+    box-shadow: 0 8px 48px 2px hsla(10 6% 15% / 0.4);
+  
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  
+    position: relative;
+    overflow: hidden;
+    background:black;
+  
+    box-sizing: border-box;
+    -webkit-box-shadow: 15px 14px 15px -1px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 15px 14px 15px -1px rgba(0, 0, 0, 1);
+    box-shadow: 15px 14px 15px -1px rgba(0, 0, 0, 1);
+  }
+  .ci {
+    position: absolute;
+    top: 0;
+    left: 13%;
+  
+    width: 100%;
+    height: 90%;
+    transform-origin: left 50%;
+  
+    background:black;
+  
+    /* z-index: var(--z); */
+    transition: 0.3s ease-out;
+  }
+  .ci img {
+    -moz-user-select: none;
+    user-select: none;
+    width: 75%;
+    height: 100%;
+  }
+  
+  .ch {
+    position: absolute;
+    top: 70%;
+    left: 4%;
+    transform: translateY(-50%);
+  
+    font-size: 2rem;
+    color: hsla(var(--h) var(--s) var(--l) / 0.8);
+    text-shadow: 0 2px 10px hsla(var(--h) var(--s) 10% / 0.3);
+  }    
+  label {
+    width: 2%;
+    height: 10px;
+    margin-right: 4px;
+    border-radius: 20px;
+  
+    background: hsla(0 0% 90% / 0.3);
+    cursor: pointer;
+  
+    position: relative;
+    z-index: 10;
+  }
+}
+                                         /* =======ALBUM-CARD===== */
+.cardi {
+  opacity: 0;
+}
+                                   /* ====card=== */
+.card {
+  position: relative;
+  background-color: #fff;
+  padding: 0.9rem;
+  border-radius: 20px;
+  transition: transform 300ms ease-in;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+.card:focus {
+  outline: 2px solid #02b85d;
+}
+.card-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-wrapper img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* object-fit: cover; */
+  object-position: bottom;
+  border-radius: 20px;
+  transition: transform 500ms linear;
+}
+.card-wrapper:hover img {
+  transform: scale(1.2);
+}
+.hidden-cover {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0);
+  transition: transform 250ms ease-in;
+  background: linear-gradient(transparent 5%, hsl(0, 0%, 5%, 0.6));
+  transform-origin: top;
+  will-change: transform;
+}
+.card-wrapper:hover .hidden-cover {
+  transform: scaleY(1);
+}
+h4 {
+  left: 5%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 2rem;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  overflow: hidden;
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: translateY(100%);
+  transform-origin: bottom;
+  transition: transform 250ms ease-out;
+  will-change: transform;
+}
+
+.card-wrapper:hover h4 {
+  transform: translateY(-2rem);
+}
+@media screen and (max-width: 767px){
+  .card {
+    position: relative;
+    top: -30rem;
+    left: 110%;
+    background-color: black;
+    padding: 0.9rem;
+    border-radius: 20px;
+    transition: transform 300ms ease-in;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  }
+  .cardi {
+    opacity: 0;
+    position:unset;
+    top: 410px;
+    background-color: #fff;
+    padding: 0.9rem;
+    border-radius: 20px;
+    transition: transform 300ms ease-in;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+      0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  }  
+
+}
+
+                                        /* ======HAKKIMIZDA==== */
+                                    
+.active4 {
+  background-color: #30e849;
+}
+.texti{
+  color: black;
+}
+                       /* ====başlık-media=== */
+@media  screen and (max-width: 767px) {
+  .h1 {
+    top:20%;
+    font-size: 1.4rem;
+    position: fixed;
+    left: -13%;
+    margin: 0;
+    transform: rotate(-90deg) translateY(-50%);
+    font-family: "Poppins", sans-serif;
+  }
+  
+}
+ul img {
+  margin: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: black;
+  width: 55px;
+  height: 55px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 3);
+}
+.kutu {
+  background: url(https://raw.githubusercontent.com/computer-science-88/Responsive-about-us-section-/master/image1.jpg)
+    no-repeat left;
+  background-size: 55%;
+  background-color:tomato;
+  overflow: hidden;
+  padding: 150px 0;
+}
+.inner-section {
+  width: 55%;
+  float: right;
+  background-color: #fdfdfd;
+  padding: 140px;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+}
+.inner-section h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+.text {
+  font-size: 13px;
+  color: #545454;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+.skills button {
+  position: relative;
+  top: 43px;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 27px;
+  padding: 8px;
+  width: 150px;
+  background-color: #00999c;
+  color: white;
+  cursor: pointer;
+}
+.skills button:hover {
+  transition: 1s;
+  background-color: #ecf5f5;
+  color: #00999c;
+}
+summary {
+  position: relative;
+  top: 0;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 17px;
+  padding: 5px;
+  width: 35%;
+  background-color: #00999c;
+  color: white;
+  cursor: pointer;
+}
+
+
+details {
+  background-color:white;
+  color:#7a7efd;
+  font-size:14px;
+  border-radius: 5px;
+}
+details p{
+    color: black;
+}
+@media screen and (max-width: 1200px) {
+  .inner-section{
+    padding: 80px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .kutu {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+  .inner-section {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .kutu {
+    padding: 0;
+  }
+  .inner-section {
+    padding: 60px;
+  }
+  .skills button {
+    font-size: 20px;
+    padding: 15px;
+    width: 150px;
+  }
+}
+.kutu1 {
+  background: url(https://raw.githubusercontent.com/computer-science-88/Responsive-about-us-section-/master/image1.jpg)
+    no-repeat right;
+  background-size: 55%;
+  background-color: tomato;
+  overflow: hidden;
+  padding: 100px 0;
+}
+.inner-section1 {
+  width: 55%;
+  float: left;
+  background-color: #fdfdfd;
+  padding: 140px;
+  box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 1200px) {
+  .inner-section1{
+    padding: 80px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .kutu1 {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+  .inner-section1 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .kutu1 {
+    padding: 0;
+  }
+
+  .inner-section1 {
+    padding: 60px;
+  }
+  .skills button {
+    font-size: 20px;
+    padding: 15px;
+    width: 150px;
+  }
+}

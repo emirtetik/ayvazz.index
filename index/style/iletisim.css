@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    list-style: none;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flexbox;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-image: url("img/iletisimbg.png");
+    background-color: black;
+  }
+
+  header {
+    left: 0;
+    top: 0;
+    padding: 3% 10%;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+  }
+  header .logo {
+    color:white;
+    font-weight: 70%;
+    font-family: 'Rubik Dirt', cursive;
+    text-decoration: none;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .controll {
+    max-width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+  }
+  .controll ul li:hover a img{
+    background-color: #30e849;
+  } 
+  .active1{
+     background-color: #30e849;
+  }
+  ul img {
+          margin: 0.7rem 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1rem;
+          cursor: pointer;
+          border-radius: 50%;
+          background-color: black;
+          width: 55px;
+          height: 55px;
+          box-shadow: 0 3px 15px rgba(0, 0, 0, 3);
+       }
+
+       .scene {
+        position: absolute;
+        width: 100%;
+        transform: translateY(var(--translateY));
+        will-change: transform;
+      }
+     #kampcı{
+      position: relative;
+      left: 28%;
+      top: 93px;
+      width: 3.7%;
+      height: auto;
+     }  
+     
